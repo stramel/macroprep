@@ -1,0 +1,8 @@
+{
+  "extends": ["eslint:recommended", "google", "prettier"],
+  "plugins": ["html"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  }
+}

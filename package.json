@@ -1,0 +1,62 @@
+{
+  "name": "macroprep",
+  "version": "0.0.0",
+  "description": "Meal planning app",
+  "main": "src/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stramel/macroprep.git"
+  },
+  "keywords": [
+    "macros",
+    "meal",
+    "planning",
+    "meal",
+    "preparation",
+    "fitness",
+    "health"
+  ],
+  "author": "Michael Stramel <m.stramel89@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stramel/macroprep/issues"
+  },
+  "homepage": "https://github.com/stramel/macroprep#readme",
+  "scripts": {
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint --ext .js,.html .",
+    "lint:prettier": "prettier '**/*.{js,html}' --list-different",
+    "format": "run-p format:*",
+    "format:eslint": "eslint --ext .js,.html . --fix",
+    "format:prettier": "prettier '**/*.{js,html}' --write",
+    "test": "karma start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,html}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@commitlint/prompt-cli": "^7.2.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.11.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-html": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.1"
+  }
+}
